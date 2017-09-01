@@ -44,12 +44,27 @@ int main()
         printf("\n");
     }
 
-    //  
+    //  Switch...or syntactic sugar for if/else chains?
     for (int i = 75; i < 100; i++)
     {
-
-
-
+        int mod3 = 2*(int)((i%3)!=0);
+        int mod5 = (int)((i%5)!=0); 
+        //  printf("    Test %d: %d + %d = %d\n", i, 2*(int)((i%3)!=0), ((i%5)!=0), mod3+mod5);
+        switch(mod3 + mod5)
+        {
+            case 0 :
+                printf("%d: FizzBuzz\n", i);
+                break;
+            case 1 :
+                printf("%d: Fizz\n", i);
+                break;
+            case 2 :
+                printf("%d: Buzz\n", i);
+                break;
+            default :
+                printf("%d: \n", i);
+                break;
+        }
     }
     return 0;
 }
